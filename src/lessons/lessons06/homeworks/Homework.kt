@@ -99,7 +99,6 @@ fun printBonusPoints(amount: Int) {
     } else {
         points = (amount / 100) * 3
     }
-
     println("Сумма покупки: $amount руб. → Бонусные баллы: $points")
 }
 
