@@ -1,4 +1,4 @@
-package lessons.lessons06.homeworks
+package lessons.lesson06.homeworks
 
 fun main() {
     println("Задача 1")
