@@ -25,7 +25,8 @@ fun main() {
 
     println(replacedString)
 
-//    Извлечение даты из строки лога
+//    2. Извлечение даты из строки лога
+
     val logString = "Пользователь вошел в систему -> 2021-12-01 09:48:23"
 
     val dataString = logString.split("->")
@@ -36,12 +37,14 @@ fun main() {
     println(date + " " + time)
 
 //    3. Маскирование личных данных
+
     val cardNumber = "4539 1488 0343 6467"
     val maskNumber = "**** **** **** " + cardNumber.split(" ")[3]
 
     println(maskNumber)
 
 //    4. Форматирование адреса электронной почты
+
     val emailString = "username@example.com"
     val indexOFAt = emailString.indexOf("@") + 1
     val indexOFDot = emailString.indexOf(".")
