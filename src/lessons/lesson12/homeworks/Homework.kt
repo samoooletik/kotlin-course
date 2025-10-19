@@ -1,6 +1,4 @@
-@file:Suppress("CANDIDATE_CHOSEN_USING_OVERLOAD_RESOLUTION_BY_LAMBDA_ANNOTATION")
-
-package lessons.lesson12
+package lessons.lesson12.homeworks
 
 fun main() {
     val numbers = listOf(-1, 2, -3, 4, -5, 8, 25, 19, 264)
