@@ -104,15 +104,15 @@ fun main() {
 
 //25. Убедитесь, что словарь с результатами нагрузочного тестирования не пуст.
     val loadTestResults = mapOf("response_time" to 150, "throughput" to 1000)
-    println( loadTestResults.isNotEmpty())
+    println(loadTestResults.isNotEmpty())
 
 //26. Проверьте, прошли ли успешно все автоматизированные тесты в словаре с результатами.
     val automatedTests = mapOf("test1" to true, "test2" to true, "test3" to true)
-    println( automatedTests.all { it.value })
+    println(automatedTests.all { it.value })
 
 //27. Определите, содержит ли словарь с результатами тестирования хотя бы один тест с ошибкой.
     val testResultsMap = mapOf("test1" to "passed", "test2" to "error", "test3" to "passed")
-    println( testResultsMap.any { it.value == "error" })
+    println(testResultsMap.any { it.value == "error" })
 
 //28. Отфильтруйте словарь с результатами тестирования сервисов, оставив только те тесты, которые не прошли успешно и содержат в названии “optional”.
     val serviceTests = mapOf(
