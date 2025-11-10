@@ -1,34 +1,30 @@
 package lessons.lesson18.homework
-
 abstract class TemperatureOpenableEquipment : ProgrammableEquipment(), Interfaces.TemperatureRegulatable, Interfaces.Openable {
-    protected var currentTemp: Int = 20
-    protected var isOpened: Boolean = false
+    protected var currentTemp = 20
+    protected var isOpened = false
+    abstract override val maxTemperature: Int
 
     override fun setTemperature(temp: Int) {
-        if (!isPoweredOn) {
-            println("$equipmentName: выключен")
-            return
-        }
-        if (temp > maxTemperature) {
-            println("$equipmentName: максимум $maxTemperature°C")
-            return
-        }
+        if (!isOn) return println("$name: выключен")
+        if (temp > maxTemperature) return println("$name: максимум $maxTemperature°C")
         currentTemp = temp
-        println("$equipmentName: установлена $temp°C")
+        println("$name: $temp°C")
     }
 
     override fun open() {
+        if (isOpened) return println("$name: уже открыт")
         isOpened = true
-        println("$equipmentName: открыт")
+        println("$name: открыт")
     }
 
     override fun close() {
+        if (!isOpened) return println("$name: уже закрыт")
         isOpened = false
-        println("$equipmentName: закрыт")
+        println("$name: закрыт")
     }
 
     override fun executeProgramAction(action: String, step: Int) {
-        when (action) {
+        when (action.lowercase()) {
             "открыть" -> open()
             "закрыть" -> close()
             "нагрев" -> setTemperature(maxTemperature)
